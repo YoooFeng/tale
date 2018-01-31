@@ -8,8 +8,10 @@ pipeline {
     }
     stage('Deploy') {
       steps {
-        bat 'cd target/dist/tale'
-        bat 'java -jar tale-least.jar'
+        dir(path: './target/dist/tale') {
+          bat 'java -jar tale-least.jar'
+        }
+        
       }
     }
   }
