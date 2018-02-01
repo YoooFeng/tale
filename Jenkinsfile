@@ -1,13 +1,9 @@
 pipeline {
   agent any
   stages {
-    stage('Compile') {
+    stage('Deploy') {
       steps {
-        sh 'mvn clean install -Pprod -DskipTests'
-        dir(path: './target/dist/') {
-          sh 'cp -r tale /home/workplace/Artifacts/'
-        }
-        
+        sh 'BUILD_ID=dontKillMe nohup /home/workplace/Artifacts/startup.sh &'
       }
     }
   }
