@@ -7,7 +7,7 @@ pipeline {
         dir(path: './target/dist/tale') {
           sh '''pwd
 ls -l
-cp tale-least.jar /home/workspace/Artifacts/'''
+cp tale-least.jar /home/workplace/Artifacts/'''
         }
         
       }
