@@ -3,7 +3,7 @@ pipeline {
   stages {
     stage('Compile') {
       steps {
-        sh 'mvn clean package -DskipTest'
+        sh 'mvn clean package -Pprod -DskipTest'
         sleep 5
       }
     }
