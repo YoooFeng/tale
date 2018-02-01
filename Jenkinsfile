@@ -1,14 +1,12 @@
 pipeline {
   agent any
   stages {
-    stage('Compile') {
+    stage('Deploy') {
       steps {
-        sh 'mvn clean package -Pprod -DskipTests'
-        sh '''ls -l
-pwd'''
         dir(path: './target/dist/tale') {
-          sh '''ls -l
-pwd'''
+          sh '''pwd
+ls -l
+nohup java -jar tale-least.jar &'''
         }
         
       }
