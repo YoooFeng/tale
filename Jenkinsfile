@@ -3,7 +3,8 @@ pipeline {
   stages {
     stage('Compile') {
       steps {
-        sh 'mvn clean package -Pprod -Dmaven.test.skip=true'
+        sh 'mvn clean package -DskipTest'
+        sleep 5
       }
     }
   }
