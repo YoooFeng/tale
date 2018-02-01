@@ -4,7 +4,7 @@ pipeline {
     stage('Deploy') {
       steps {
         dir(path: './target/dist/tale') {
-          sh 'ls -a -l'
+          sh 'ls -l'
         }
         
       }
