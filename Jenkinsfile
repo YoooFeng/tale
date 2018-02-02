@@ -1,12 +1,10 @@
 pipeline {
   agent any
   stages {
-    stage('Deploy') {
+    stage('Compile') {
       steps {
-        dir(path: '/home/workplace/Artifacts/tale') {
-          sh 'java -jar tale-least.jar'
-        }
-        
+        sh '''mvn clean install -Pprod -DskipTests
+cp -r ./target/dist/tale /home/workplace/Artifacts/'''
       }
     }
   }
